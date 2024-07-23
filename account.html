@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboar</title>
+    <link rel="stylesheet" href="./asset/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <header>
+        <div class="header container">
+            <div class="header__left">
+                <div class="header__logo">
+                    <img src="./img/logo.png" alt="">
+                </div>
+                <div class="header__desc">
+                    <h1>TRƯỜNG ĐẠI HỌC ĐỒNG THÁP</h1>
+                    <p>Hệ thống đánh giới thiệu nhà trọ</p>
+                </div>
+            </div>
+            <div class="header__right">
+                <ul class="header__list">
+
+                    <li>
+                        <div class="user-info">
+                            <i class="ri-account-circle-line"></i>
+                            Lê Hoàng Thiện Mỹ
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="main">
+        <div class="main__content">
+            <div class="main__left">
+                <ul class="nav-list">
+                    <li>
+                        <a href="./index.html">
+                            <i class="ri-home-4-line"></i>
+                            Quản lý bài đăng
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="./account.html">
+                            <i class="ri-account-pin-box-line"></i>
+                            Quản lý tài khoản chủ trọ
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="ri-logout-box-line"></i>
+                            Đăng xuất
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="main__right container">
+                <div class="right__header">
+                    <h1>Danh sách tài khoản chủ trọ</h1>
+
+                    <div class="box-right-header">
+
+                        <div class="searh-box">
+                            <i class="ri-search-line"></i>
+                            <input type="text" class="search-input" placeholder="Tìm kiếm...">
+                        </div>
+
+                        <div class="sort-bar">
+                            <select id="sort_list">
+                                <option class="sort_item" value="productID">Mặc định</option>
+                                <option class="sort_item" value="productName">Bài đăng: Cũ đến mới</option>
+                                <option class="sort_item" value="productPriceAsc">Bài đăng: Chưa duyệt</option>
+                                <option class="sort_item" value="productPriceDesc">Bài đăng: Đã duyệt</option>
+                                <option class="sort_item" value="productQuantityAsc">Giá thuê: Lớn đến Nhỏ</option>
+                                <option class="sort_item" value="productQuantityDesc">Giá thuê: Nhỏ đến Lớn</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                
+                <br>
+                <!-- Start table -->
+                <div class="box-table">
+                    <table width="100%">
+                    <thead>
+                        <tr>
+                            <td>ID</td>
+                            <td>Họ Tên </td>
+                            <td>Năm sinh</td>
+                            <td>Địa chỉ</td>
+                            <td>SĐT</td>
+                            <td>SL bài đăng</td>
+                            <td colspan= 2>Sửa | Xóa</td>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td id="post-id">1</td>
+
+                            <td class="people">
+                                <img src="./img/avatar.png" alt="">
+                                <div class="people-des">
+                                    <h5>Thiện Mỹ</h5>
+                                    <p>thienmy230703@gmail.com</p>
+                                </div>
+                            </td>
+
+                            <td class="people-brday">
+                                <p>23/07/2003</p>
+                            </td>
+
+                            <td class="people-location">
+                                <p>12 Nguyễn Thị Minh Khai, Phường 1, TP Cao Lãnh, Đồng Tháp</p>
+                            </td>
+
+                            <td class="people-phone">
+                                <p>0923290954</p>
+                            </td>
+
+                            <td class="people-quatity-post">
+                                <p class="">1000</p>
+                            </td>
+
+                            <td class="action">
+                                <button class="btn-edit js-edit-acc" type="submit"><i class="ri-file-edit-line"></i></button>
+                                <button class="btn-delete js-delete-acc" type="submit"><i class="ri-delete-bin-2-line"></i></button>
+                            </td>
+                        </tr>
+
+                        
+                    </tbody>
+                </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End main -->
+
+    <!-- Begin modal delete -->
+    <div class="modal-account-delete js-modal-account-delete ">
+        <div class="modal-account-delete-container js-modal-account-delete-container ">
+            <!--Begin Close-button -->
+
+            <!--End Close-button -->
+            <div class="modal-account-delete-header">
+                <p class="head-delete-arlert">Xác nhận xóa tài khoản </p>
+            </div>
+            <div class="modal-account-delete-body">
+
+                <div class="body-alert">
+                    <p>Lưu ý: Tất cả thông tin bài đăng liên quan đến tài khoản này sẽ bị xóa theo!</p>
+                </div>
+                <hr>
+
+                <div class="btn-option">
+                    <button type="submit" class="cancel-account js-modal-account-delete-cancel">Hủy</button>
+                    <button type="submit" class="delete-account js-modal-account-deleted js-deleted-post-toast">Xóa</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!--End Modal-Delete -->
+
+    <div id="myModal" class="modal-edit-acc js-modal-edit-acc">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1>Thông tin chi tiết</h1>
+            <span class="close-modal-edit js-close-modal">&times;</span>
+          </div>
+          <div class="modal-body">
+            <div>
+              <label for="id">ID:</label>
+              <input type="text" id="id" value="123456" disabled>
+            </div>
+            <div>
+              <label for="name">Họ tên:</label>
+              <input type="text" id="name" value="Nguyễn Văn A">
+            </div>
+            <div>
+                <label for="name">Email:</label>
+                <input type="email" id="email" value="taymeo1633@gmail.com">
+              </div>
+            <div>
+              <label for="dob">Năm sinh:</label>
+              <input type="date" id="dob" >
+            </div>
+            <div>
+              <label for="address">Địa chỉ:</label>
+              <input type="text" id="address" value="123 Đường ABC, Quận 1, TP.HCM">
+            </div>
+            <div>
+              <label for="phone">SĐT:</label>
+              <input type="text" id="phone" value="0909123456">
+            </div>
+            <div>
+              <label for="post_count">SL bài đăng:</label>
+              <input type="text" id="post_count" value="100" disabled >
+            </div>
+            <div>
+              <label for="zalo_link">Đường link Zalo:</label>
+              <input type="text" id="zalo_link" value="https://zalo.me/example">
+            </div>
+            <div>
+              <label for="fb_link">Đường link Facebook:</label>
+              <input type="text" id="fb_link" value="https://facebook.com/example">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button">Lưu thông tin</button>
+          </div>
+        </div>
+    </div>
+</body>
+
+<!-- JAVASCRIPT -->
+<script src="./js/account.js"></script>
+
+</html>
